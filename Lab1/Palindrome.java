@@ -3,7 +3,6 @@ public class Palindrome {
 	//Метод main. Принимает массив строк
     public static void main(String[] args) {
 		//Цикл перебирающий массив args
-		System.out.println("палиндромы"); 
         for (int i = 0; i < args.length; i++) {
 			String s = correctString(args[i]);
 			//Если s = развернутому s, то печатаем что это палиндром
