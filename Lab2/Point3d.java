@@ -52,28 +52,28 @@ public class Point3d {
         zCoord = val;
     }
 	
-	//Метод equals. Сравнивает экземпляры
+	//РњРµС‚РѕРґ equals. РЎСЂР°РІРЅРёРІР°РµС‚ СЌРєР·РµРјРїР»СЏСЂС‹
 	public boolean equals(Object obj) {
-		//Проверка является ли объект экземпляром класса Point3d
+		//РџСЂРѕРІРµСЂРєР° СЏРІР»СЏРµС‚СЃСЏ Р»Рё РѕР±СЉРµРєС‚ СЌРєР·РµРјРїР»СЏСЂРѕРј РєР»Р°СЃСЃР° Point3d
 		if (obj.getClass()!=getClass()){
-			// Если нет, выводим false
+			// Р•СЃР»Рё РЅРµС‚, РІС‹РІРѕРґРёРј false
 			return false;
 		}
-		//Иначе сравниваем  2 объекта
+		//РРЅР°С‡Рµ СЃСЂР°РІРЅРёРІР°РµРј  2 РѕР±СЉРµРєС‚Р°
 		else {
 			Point3d another_point = (Point3d) obj;
 			return another_point.getX() == xCoord && another_point.getY() == yCoord && another_point.getZ() == zCoord;
 		}
 		
     }
-	//Метод distanceTo. Возвращает расстояние между двумя точками
+	//РњРµС‚РѕРґ distanceTo. Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РґРІСѓРјСЏ С‚РѕС‡РєР°РјРё
 	public double distanceTo (Object obj) {
 		if (obj.getClass()!=getClass()){
 			return 0.0;
 		}
 		else{
 			Point3d p3d = (Point3d) obj;
-			//Вычисляем расстояние по формуле
+			//Р’С‹С‡РёСЃР»СЏРµРј СЂР°СЃСЃС‚РѕСЏРЅРёРµ РїРѕ С„РѕСЂРјСѓР»Рµ
 			return Math.sqrt(Math.pow((xCoord-p3d.getX()),2)+Math.pow((yCoord-p3d.getY()),2)+Math.pow((zCoord-p3d.getZ()),2));
 		}
 	}

@@ -1,32 +1,32 @@
 import java.io.*;
 
-//Класс Lab1
+//РљР»Р°СЃСЃ Lab1
 public class Lab1 
 {
-	//Метод main
+	//РњРµС‚РѕРґ main
     public static void main(String[] args) 
 	{
-		//Создаем экземпляры класса Point3d
+		//РЎРѕР·РґР°РµРј СЌРєР·РµРјРїР»СЏСЂС‹ РєР»Р°СЃСЃР° Point3d
 		Point3d A = new Point3d();
 		Point3d B = new Point3d();
 		Point3d C = new Point3d();
-		//Вводим данные в экземпляры класса Point3d
+		//Р’РІРѕРґРёРј РґР°РЅРЅС‹Рµ РІ СЌРєР·РµРјРїР»СЏСЂС‹ РєР»Р°СЃСЃР° Point3d
 		System.out.println("\n");
-		PointInsert(A, "Введите координаты точки А:");
-		PointInsert(B, "Введите координаты точки B:");
-		PointInsert(C, "Введите координаты точки C:");
-		//Если хотя бы пара из экземпляров равны, то выводим ошибку
+		PointInsert(A, "Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ С‚РѕС‡РєРё Рђ:");
+		PointInsert(B, "Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ С‚РѕС‡РєРё B:");
+		PointInsert(C, "Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ С‚РѕС‡РєРё C:");
+		//Р•СЃР»Рё С…РѕС‚СЏ Р±С‹ РїР°СЂР° РёР· СЌРєР·РµРјРїР»СЏСЂРѕРІ СЂР°РІРЅС‹, С‚Рѕ РІС‹РІРѕРґРёРј РѕС€РёР±РєСѓ
 		if (A.equals(B) || B.equals(C) || C.equals(A)) {
-			System.out.println("\nОШИБКА! Некоторые точки совпадают.");
+			System.out.println("\nРћРЁРР‘РљРђ! РќРµРєРѕС‚РѕСЂС‹Рµ С‚РѕС‡РєРё СЃРѕРІРїР°РґР°СЋС‚.");
 		}
-		//Иначе выводим расстояние между точками и площадь треугольника
+		//РРЅР°С‡Рµ РІС‹РІРѕРґРёРј СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РѕС‡РєР°РјРё Рё РїР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 		else {	
 			System.out.println(" AB="+A.distanceTo(B)+"\n AC="+A.distanceTo(C)+"\n BC="+B.distanceTo(C));
 			System.out.println(" S="+computeArea(A,B,C));
 		}
     }
 
-	//Метод PointInsert. Заполняет поля объекта Point3d
+	//РњРµС‚РѕРґ PointInsert. Р—Р°РїРѕР»РЅСЏРµС‚ РїРѕР»СЏ РѕР±СЉРµРєС‚Р° Point3d
 	public static void PointInsert (Point3d point, String s) {
 		System.out.println(s);
 		System.out.print(" X: ");
@@ -37,7 +37,7 @@ public class Lab1
 		point.setZ(getDouble());
 		System.out.println("\n");
 	} 
-	//Метод computeArea. Вычисляет площадь треугольника по заданным точкам
+	//РњРµС‚РѕРґ computeArea. Р’С‹С‡РёСЃР»СЏРµС‚ РїР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РїРѕ Р·Р°РґР°РЅРЅС‹Рј С‚РѕС‡РєР°Рј
 	public static double computeArea (Point3d A, Point3d B, Point3d C) {
 		double AB = A.distanceTo(B);
 		double AC = A.distanceTo(C);

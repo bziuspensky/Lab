@@ -24,7 +24,7 @@ public class Location
     {
         this(0, 0);
     }
-	//Метод equals. Сравнивает 2 объекта 
+	//РњРµС‚РѕРґ equals. вЂ”СЂР°РІРЅРёРІР°РµС‚ 2 РѕР±СЉРµРєС‚Р° 
 	public boolean equals(Object Obj) {
 		if (getClass()!=Obj.getClass()){
 			return false;
@@ -34,10 +34,10 @@ public class Location
 			return xCoord==another_loc.xCoord && yCoord==another_loc.yCoord;
 			}
 	}
-	//Метод hashCode. Возвращает уникальный код экземпляра
+	//РњРµС‚РѕРґ hashCode. СЃРѕР·РІСЂР°С‰Р°РµС‚ СѓРЅРёРєР°Р»СЊРЅС‹Р№ РєРѕРґ СЌРєР·РµРјРїР»СЏСЂР°
 	public int hashCode() {
-		//Зададим начальное значение и с помощью 
-		//уникальных полей экземпляра изменим это значение
+		//РЎР°РґР°РґРёРј РЅР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Рё СЃ РїРѕРјРѕС‰СЊСЋ 
+		//СѓРЅРёРєР°Р»СЊРЅС‹С… РїРѕР»РµР№ СЌРєР·РµРјРїР»В¤СЂР° РёР·РјРµРЅРёРј СЌС‚Рѕ Р·РЅР°С‡РµРЅРёРµ
         int result = 33;
         result = 37 * result + xCoord;
         result = 38 * result + yCoord;

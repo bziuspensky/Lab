@@ -12,10 +12,10 @@ public class AStarState
     /** This is a reference to the map that the A* algorithm is navigating. **/
     private Map2D map;
 	
-	//‘оздаем карту открытых путевых точек
+	//РЎРѕР·РґР°РµРј РєР°СЂС‚Сѓ РѕС‚РєСЂС‹С‚С‹С… РїСѓС‚РµРІС‹С… С‚РѕС‡РµРє
     private Map<Location, Waypoint> open_waypoints
     = new HashMap<Location, Waypoint> ();
-	//‘оздаем карту закрытых путевых точек
+	//РЎРѕР·РґР°РµРј РєР°СЂС‚Сѓ Р·Р°РєСЂС‹С‚С‹С… РїСѓС‚РµРІС‹С… С‚РѕС‡РµРє
     private Map<Location, Waypoint> closed_waypoints
     = new HashMap<Location, Waypoint> ();
 
@@ -46,11 +46,11 @@ public class AStarState
      **/
     public Waypoint getMinOpenWaypoint()
     {
-         //…сли нет открытых путевых точек, по возвращаем пустоту
+         //Р•СЃР»Рё РЅРµС‚ РѕС‚РєСЂС‹С‚С‹С… РїСѓС‚РµРІС‹С… С‚РѕС‡РµРє, РїРѕ РІРѕР·РІСЂР°С‰Р°РµРј РїСѓСЃС‚РѕС‚Сѓ
         if (numOpenWaypoints() == 0)
             return null;
         
-		//‘оздаем ключи и представлениЯ карты. ‘сылку на объект Waypoint. Џеременную длЯ хранениЯ лучшей цены
+		//РЎРѕР·РґР°РµРј РєР»СЋС‡Рё Рё РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РєР°СЂС‚С‹. РЎСЃС‹Р»РєСѓ РЅР° РѕР±СЉРµРєС‚ Waypoint. РџРµСЂРµРјРµРЅРЅСѓСЋ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Р»СѓС‡С€РµР№ С†РµРЅС‹
         Set open_waypoint_keys = open_waypoints.keySet();
         Iterator i = open_waypoint_keys.iterator();
         Waypoint best = null;
@@ -62,7 +62,7 @@ public class AStarState
             Waypoint waypoint = open_waypoints.get(location);
             float waypoint_total_cost = waypoint.getTotalCost();
 
-			//…сли текущаЯ стоимость меньше значениЯ best_cost, до переназначаем значениЯ best и best_cost на текущие
+			//Р•СЃР»Рё С‚РµРєСѓС‰Р°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ РјРµРЅСЊС€Рµ Р·РЅР°С‡РµРЅРёСЏ best_cost, РґРѕ РїРµСЂРµРЅР°Р·РЅР°С‡Р°РµРј Р·РЅР°С‡РµРЅРёСЏ best Рё best_cost РЅР° С‚РµРєСѓС‰РёРµ
             if (waypoint_total_cost < best_cost)
             {
                 best = open_waypoints.get(location);
