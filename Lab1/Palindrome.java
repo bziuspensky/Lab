@@ -20,7 +20,7 @@ public class Palindrome {
 	public static String correctString(String s){
 		String rs="";
 		s=s.toLowerCase();
-		for (int i = 0; i < s.length()-1; i++){
+		for (int i = 0; i < s.length(); i++){
 			if (Character.isLetter(s.charAt(i))){
 				rs += s.charAt(i);
 			}
